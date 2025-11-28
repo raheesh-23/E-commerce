@@ -33,6 +33,7 @@ This project aims to provide a solid foundation to create a feature-rich and sca
 1. Clone and change to the directory:
 
 ```
+git clone https://github.com/raheesh-23/E-commerce.git
 cd django-ecommerce
 ```
 
