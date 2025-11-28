@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160" role="img" aria-labelledby="titleA descA">
+  <title id="titleA">freashcart logo — leaf cart</title>
+  <desc id="descA">Green leaf growing from a shopping cart with wordmark "freashcart".</desc>
+
+  <!-- Cart + leaf icon -->
+  <g transform="translate(18,16)" id="icon">
+    <!-- cart body -->
+    <rect x="0" y="36" width="98" height="44" rx="6" fill="#2E7D32"/>
+    <!-- cart handle -->
+    <rect x="82" y="12" width="8" height="40" rx="4" fill="#2E7D32" transform="rotate(18 86 32)"/>
+    <!-- wheel left -->
+    <circle cx="24" cy="92" r="10" fill="#1B5E20"/>
+    <!-- wheel right -->
+    <circle cx="78" cy="92" r="10" fill="#1B5E20"/>
+    <!-- leaf -->
+    <path d="M68 8c18-6 36 6 36 24s-18 32-36 30c8-12 6-28 0-46z" fill="#66BB6A"/>
+    <!-- leaf vein -->
+    <path d="M80 12c-8 6-12 18-8 28" stroke="#2E7D32" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(140,52)" id="wordmark">
+    <text x="0" y="14" font-family="Verdana,Arial,Helvetica,sans-serif" font-weight="700" font-size="40" fill="#1B5E20">freash</text>
+    <text x="0" y="54" font-family="Verdana,Arial,Helvetica,sans-serif" font-weight="700" font-size="40" fill="#355A30">cart</text>
+  </g>
+</svg>
