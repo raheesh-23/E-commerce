@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Features Demo</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        h1, h2, h3 { color: #333; }
+        .feature { border: 1px solid #ccc; padding: 1em; margin-bottom: 2em; border-radius: 5px; }
+        .product { border: 1px solid #eee; padding: 1em; margin-bottom: 1em; border-radius: 5px; }
+        .product-list { display: flex; gap: 1em; }
+        .product-item { flex: 1; }
+        img { max-width: 100px; max-height: 100px; }
+    </style>
+</head>
+<body>
+    <h1>Demonstration of New Machine Learning Features</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% else %}
+        <!-- Product Recommendation -->
+        <div class="feature">
+            <h2>1. Product Recommendation System</h2>
+            <p>Here are the top 3 recommendations for the product: <strong>{{ product_for_recommendation.title }}</strong></p>
+            <div class="product-list">
+                {% for product in recommendations %}
+                    <div class="product-item product">
+                        {% if product.product_image %}
+                            <img src="{{ product.product_image }}" alt="{{ product.title }}">
+                        {% endif %}
+                        <h3>{{ product.title }}</h3>
+                        <p>Price: {{ product.price }}</p>
+                    </div>
+                {% empty %}
+                    <p>No recommendations found.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Smart Search -->
+        <div class="feature">
+            <h2>2. Smart Search</h2>
+            <p>Showing search results for the query: <strong>"{{ search_query }}"</strong></p>
+            <div class="product-list">
+                {% for product in search_results %}
+                    <div class="product-item product">
+                        {% if product.product_image %}
+                            <img src="{{ product.product_image }}" alt="{{ product.title }}">
+                        {% endif %}
+                        <h3>{{ product.title }}</h3>
+                        <p>Price: {{ product.price }}</p>
+                    </div>
+                {% empty %}
+                    <p>No search results found.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Price Prediction -->
+        <div class="feature">
+            <h2>3. Price Prediction</h2>
+            <p>Predicting the price for a product with the following attributes:</p>
+            <ul>
+                <li>Category: {{ prediction_input.category }}</li>
+                <li>Stock Count: {{ prediction_input.stock_count }}</li>
+                <li>Shipping: {{ prediction_input.shipping }}</li>
+            </ul>
+            <h3>Predicted Price: <strong>{{ predicted_price|floatformat:2 }}</strong></h3>
+        </div>
+    {% endif %}
+</body>
+</html>
